@@ -4,9 +4,6 @@ export async function fetchCars(filters: FilterProps) {
   const { manufacturer, year, model, limit, fuel } =
   filters;
 
-  
-  
-  
       const headers = {
         'x-rapidapi-key': '98fe27a6b2msh3c2258de05a9f14p13a1e0jsn1fdcc3cc6d3d',
         'x-rapidapi-host': 'cars-by-api-ninjas.p.rapidapi.com',
@@ -52,4 +49,18 @@ export const generateCarImageUrl = (Car: CarProps, angle? : string ) => {
   return `${url}`;
 
 };
+
+export const updateSearchParams = (type: string, value: string) => {
+
+  const searchParams = new URLSearchParams(window.location.search);
+     
+  searchParams.set(type, value);
+  
+  const newPathname = `${window.location.pathname}?${searchParams.toString()}`
+
+
+  return newPathname;
+
+  
+}
     
