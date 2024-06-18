@@ -57,3 +57,7 @@ export interface ShowmoreProps {
 
 }
 
+export interface HomeProps {
+  searchParams: FilterProps;
+}
+
